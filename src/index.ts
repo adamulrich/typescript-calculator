@@ -15,7 +15,7 @@ const STATE_OPERAND_2 = 3;
 const STATE_EQUALS = 4
 const DISPLAY_BUFFER_MAX = 25;
 
-const OPERATORS = {
+const OPERATORS: {[key: string]: string } = {
     "equals": "=",
     "plus": "+",
     "divide": "/",
@@ -23,7 +23,7 @@ const OPERATORS = {
     "multiply": "*"
 }
 
-class CalculatorState {
+class CalculatorState  {
     displayBuffer: string;
     currentState: number;
     currentOperand1_value: number;
@@ -350,7 +350,7 @@ function calculateResult() {
 // add events to wire up input buttons
 // we cant use some symbols as id's for buttons, so we have to translate 
 // for dot and plus_minus
-const buttonList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "dot", "plus_minus"]
+const buttonList: string[] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "dot", "plus_minus"]
 buttonList.forEach(btn => {
 
     const button = document.getElementById(btn);
@@ -368,7 +368,7 @@ buttonList.forEach(btn => {
 
 
 // add events to wire up operator GUI buttons
-const buttonList2 = ["minus", "divide", "multiply", "equals", "plus"]
+const buttonList2: string[] = ["minus", "divide", "multiply", "equals", "plus"]
 buttonList2.forEach(btn => {
     const button = document.getElementById(btn);
     button!.addEventListener('click', function () {
@@ -378,7 +378,7 @@ buttonList2.forEach(btn => {
 })
 
 // add events to wire up clear/backspace GUI buttons
-const buttonList3 = ["clear", "all_clear", "backspace"]
+const buttonList3: string[] = ["clear", "all_clear", "backspace"]
 buttonList3.forEach(btn => {
     const button = document.getElementById(btn);
     button!.addEventListener('click', function () {

@@ -110,6 +110,14 @@ function inputButtonPressed(inputData: string) {
                         // if positive, invert
                         calc.isPositive = !(calc.isPositive);
                         break;
+
+                    case "-":
+                        calc.isPositive = false;
+                        break;
+
+                    case "=":
+                        calc.isPositive = true;
+                        break;
                 }
                 //normal number
                 let tempValue = +c;
@@ -452,12 +460,18 @@ document.body.addEventListener("keydown", function (ev) {
         if (!(Number.isNaN(parsedValue))) {
             inputButtonPressed(clipText);
         }
+        if (parsedValue < 0) {
+            calc.isPositive = false;
+        } else {
+            calc.isPositive = true;
+        }
     })
     }
     else if (key == 'c' && ctrl) {
   
         // put it on the clipboard
-        navigator.clipboard.writeText(String(calc.displayBuffer));
+        navigator.clipboard.writeText(String(displaySign().concat(calc.displayBuffer)));
+        // console.log(displaySign().concat(calc.displayBuffer));
 
         // display clipboard notice.
         // we have to hack around not having a timer event. we call this, and reset the state

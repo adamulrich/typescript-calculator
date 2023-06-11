@@ -10,8 +10,22 @@ My intent for this project was to learn typescript.
 
 - VS Code
 - Node JS
+- typescript and live server extension in VS Extensions
 
 This project uses html, css, and typescript, with node and webpack for transpiling the typescript to javascript.
+
+# Build and Run
+- Install webpack and webpack-cli 
+
+`npm install webpack webpack-cli`
+
+- Install typescript and ts-loader
+
+`npm install typescript ts-loader`
+
+- To build use:  `npm run build`
+- To view web page, open public/index.html with live server extension.
+
 
 # Useful Websites
 

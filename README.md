@@ -4,7 +4,7 @@ This a a portfolio project for building an html based calculator.
 
 My intent for this project was to learn typescript.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/bUzkr53cPg4)
 
 # Development Environment
 

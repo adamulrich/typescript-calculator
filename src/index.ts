@@ -291,6 +291,7 @@ function updateDisplay() {
     else {
         displayElement!.innerText = (displaySign() + calc.displayBuffer);
     }
+
     displayOperand1!.innerText = formatNumberOutput(calc.currentOperand1_value);
     displayOperand2!.innerText = formatNumberOutput(calc.currentOperand2_value);
     displayResult!.innerText = formatNumberOutput(calc.currentResult).substring(0, 12);
@@ -315,7 +316,11 @@ function displaySign() {
 // maybe someday fix this to be better.
 function formatNumberOutput(operand: number) {
     if (operand == 0) {
-        return ""
+        if (calc.currentState == STATE_EQUALS) {
+            return "0"
+        } else {
+            return ""
+        }
     } else {
         return String(operand).substring(0, 12)
     }
